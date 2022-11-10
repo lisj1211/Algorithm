@@ -44,6 +44,38 @@ def f(drinks, a, b, index, wash_line):
     return min(p1, p2)
 
 
+# def min_time_dp(arr, n, a, b):
+#     heap = []
+#     for i in arr:
+#         heapq.heappush(heap, (i, 0, i))
+#
+#     drink_time = []
+#     for i in range(n):
+#         end_time, cur_time, work_time = heapq.heappop(heap)
+#         drink_time.append(end_time)
+#         heapq.heappush(heap, (end_time + work_time, end_time, work_time))
+#
+#     if a >= b:  # 如果洗一杯的时间大于自然挥发的时间，则全部自然挥发
+#         return drink_time[-1] + b
+#
+#     dp = [[0 for _ in range(drink_time[-1] + n * a)] for _ in range(n)]
+#     for i in range(drink_time[-1] + n * a):
+#         dp[-1][i] = min(max(i, drink_time[-1]) + a, drink_time[-1] + b)
+#     for row in range(n - 2, -1, -1):
+#         for col in range(drink_time[-1] + n * a):
+#             wash = max(col, drink_time[row]) + a
+#             next1 = dp[row + 1][wash]
+#             p1 = max(wash, next1)
+#
+#             dry = drink_time[row] + b
+#             next2 = dp[row][col]
+#             p2 = max(dry, next2)
+#
+#             dp[row][col] = min(p1, p2)
+#
+#     return dp[0][0]
+
+
 if __name__ == '__main__':
     print(min_time([3, 2, 7], 10, 2, 5))
 
