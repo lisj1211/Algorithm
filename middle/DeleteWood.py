@@ -16,6 +16,7 @@ def delete_num(n):
         a, b = b, a + b
         fib_num += 1
 
+    # 因为多减去第一个1，和最后一项，所以加2
     return n - fib_num + 2
 
 
