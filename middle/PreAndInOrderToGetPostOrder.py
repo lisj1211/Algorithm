@@ -23,7 +23,7 @@ def fill(pre_order, pre_l, pre_r, in_order, in_l, in_r, post_order, post_l, post
 
     head = pre_order[pre_l]  # 头结点
     post_order[post_r] = head  # 放到后序列表的末尾
-    head_indx = in_order.index(head)  # 根据头结点将中序列表一分为二，递归填写左右部分
+    head_indx = in_order.index(head)  # 根据头结点将中序列表一分为二，递归填写左右部分，此处可以用字典加速查找过程
     # left_len = head_indx - in_l
     fill(pre_order, pre_l + 1, pre_l + head_indx - in_l, in_order, in_l, head_indx - 1,
          post_order, post_l, post_l + head_indx - in_l - 1)
