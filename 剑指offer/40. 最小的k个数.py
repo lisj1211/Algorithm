@@ -37,7 +37,6 @@ class Solution2:
         for i in range(k):
             heapq.heappush(heap, -arr[i])
         for i in range(k, len(arr)):
-            if -arr[i] >= heap[0]:
-                heapq.heappushpop(heap, -arr[i])
+            heapq.heappushpop(heap, -arr[i])  # 可查看heappushpop说明
 
         return [-num for num in heap]
