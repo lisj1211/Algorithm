@@ -35,7 +35,7 @@ class Solution2:
 
         heap = []
         for i in range(k):
-            heapq.heappush(heap, -arr[i])
+            heapq.heappush(heap, -arr[i])  # 默认小根堆，因此加入相反数表示大根堆
         for i in range(k, len(arr)):
             heapq.heappushpop(heap, -arr[i])  # 可查看heappushpop说明
 
