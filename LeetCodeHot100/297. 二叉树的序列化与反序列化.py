@@ -106,3 +106,4 @@ class Codec1:
                 queue2.append(node.right)
 
         return root
+
